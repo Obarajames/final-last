@@ -9,20 +9,20 @@ const {
     updateWorkout
 } = require('../controllers/workoutcontroller')
 
-//GET all workouts
+//GET all workouts from db
 router.get('/',getAllWorkouts)
 
-//GET a single workout
+//GET a single workout from db
 router.get('/:id',getWorkout)
 
-//POST a new workout
+//POST a new workout from db
 router.post('/',createWorkout)
 
-//DELETE a workout
+//DELETE a workout from db
 router.delete('/:id',deleteWorkout)
 
 
-//UPDATE a workout
+//UPDATE a workout from db
 router.patch('/:id',updateWorkout)
 
 
