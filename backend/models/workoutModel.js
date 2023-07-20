@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
-
+//function with schema
 const Schema = mongoose.Schema
-
+//what project will have
 const workoutSchema = new Schema({
     username:{
         type:String,
