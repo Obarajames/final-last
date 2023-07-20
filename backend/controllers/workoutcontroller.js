@@ -1,14 +1,14 @@
 const Workout = require('../models/workoutModel')
 const mongoose = require('mongoose')
 
-//get all posts
+//get all workouts
 const getAllWorkouts = async(req,res) => {
     const workout = await Workout.find({}).sort({createdAt:-1})
     res.status(200).json(workout)
 }
 
 
-//get a single post
+//get a single workout
 const getWorkout = async (req,res) => {
     const { id } = req.params
 
@@ -26,7 +26,7 @@ const getWorkout = async (req,res) => {
 }
 
 
-//create new post
+//create new workout
 const createWorkout = async(req,res)=> {
     const{username,description,url,caption}=req.body
 
@@ -42,7 +42,7 @@ const createWorkout = async(req,res)=> {
 }
 
 
-//delete a post
+//delete a workout
 const deleteWorkout = async(req,res) =>{
     const { id } = req.params
     if(!mongoose.Types.ObjectId.isValid(id)){
@@ -57,7 +57,7 @@ res.status(404).json(workout)
 
 
 
-//update a post
+//update a workout
 const updateWorkout = async(req,res) =>{
     const { id } = req.params
     if(!mongoose.Types.ObjectId.isValid(id)){
@@ -68,7 +68,7 @@ const updateWorkout = async(req,res) =>{
         return res.status(404).json({error:'No such workout'})
 }
 res.status(404).json(workout)
-//export all
+
 
 }
 module.exports = {

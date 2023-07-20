@@ -1,8 +1,5 @@
-//import express
 const express = require('express')
-//import workout
 const workout = require('../models/workoutModel')
-//import router
 const router = express.Router()
 const {
     createWorkout,
@@ -12,22 +9,22 @@ const {
     updateWorkout
 } = require('../controllers/workoutcontroller')
 
-//GET all posts
+//GET all workouts
 router.get('/',getAllWorkouts)
 
-//GET a single post
+//GET a single workout
 router.get('/:id',getWorkout)
 
-//POST a new post
+//POST a new workout
 router.post('/',createWorkout)
 
-//DELETE a post
+//DELETE a workout
 router.delete('/:id',deleteWorkout)
 
 
-//UPDATE a post
+//UPDATE a workout
 router.patch('/:id',updateWorkout)
 
 
-//export the whole router
+
 module.exports = router
